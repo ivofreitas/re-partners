@@ -1,0 +1,49 @@
+definitions:
+  domain.Fulfillment:
+    properties:
+      packs:
+        additionalProperties:
+          type: integer
+        description: Pack size to count mapping
+        type: object
+    type: object
+  domain.Order:
+    properties:
+      total_items:
+        description: Total number of items ordered by the customer
+        type: integer
+    required:
+    - total_items
+    type: object
+info:
+  contact: {}
+paths:
+  /fulfillment/items/calculate-packs:
+    post:
+      consumes:
+      - application/json
+      description: Given the total items ordered, calculate the number of packs needed
+      parameters:
+      - description: Order information
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/domain.Order'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Number of packs required for the given order
+          schema:
+            $ref: '#/definitions/domain.Fulfillment'
+        "400":
+          description: Invalid input provided
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Calculate packs needed for an order
+      tags:
+      - Fulfillment
+swagger: "2.0"

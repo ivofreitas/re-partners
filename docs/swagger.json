@@ -1,0 +1,77 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/fulfillment/items/calculate-packs": {
+            "post": {
+                "description": "Given the total items ordered, calculate the number of packs needed",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Fulfillment"
+                ],
+                "summary": "Calculate packs needed for an order",
+                "parameters": [
+                    {
+                        "description": "Order information",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/domain.Order"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Number of packs required for the given order",
+                        "schema": {
+                            "$ref": "#/definitions/domain.Fulfillment"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input provided",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "domain.Fulfillment": {
+            "type": "object",
+            "properties": {
+                "packs": {
+                    "description": "Pack size to count mapping",
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "domain.Order": {
+            "type": "object",
+            "required": [
+                "total_items"
+            ],
+            "properties": {
+                "total_items": {
+                    "description": "Total number of items ordered by the customer",
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

@@ -21,6 +21,16 @@ func New(service service.Fulfillment) Fulfillment {
 	return &fulfillment{service}
 }
 
+// CalculatePacks
+// @Summary Calculate packs needed for an order
+// @Description Given the total items ordered, calculate the number of packs needed
+// @Tags Fulfillment
+// @Accept  json
+// @Produce  json
+// @Param request body domain.Order true "Order information"
+// @Success 200 {object} domain.Fulfillment "Number of packs required for the given order"
+// @Failure 400 {object} map[string]string "Invalid input provided"
+// @Router /fulfillment/items/calculate-packs [post]
 func (f *fulfillment) CalculatePacks(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("content-type", "application/json")
 	encoder := json.NewEncoder(w)

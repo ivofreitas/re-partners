@@ -1,7 +1,9 @@
 package app
 
 import (
+	"github.com/swaggo/http-swagger"
 	"net/http"
+	_ "re-partners/docs"
 	"re-partners/internal/app/handler"
 	"strings"
 )
@@ -23,6 +25,9 @@ func (t *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch {
 	case r.Method == http.MethodPost && strings.EqualFold(calculatePacks, r.URL.Path):
 		t.CalculatePacks(w, r)
+		return
+	case r.Method == http.MethodGet && strings.HasPrefix(r.URL.Path, "/swagger/"):
+		httpSwagger.WrapHandler(w, r)
 		return
 	default:
 		w.WriteHeader(http.StatusNotFound)

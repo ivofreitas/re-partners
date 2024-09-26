@@ -39,11 +39,11 @@ The API exposes the following endpoint:
 
   Example usage with `curl`:
   ```bash
-  curl --location --request POST 'http://localhost:8080/fulfillment/items/calculate-packs' \
-  --header 'Content-Type: application/json' \
-  --data '{
+    curl --location 'https://re-partners-damp-resonance-9463.fly.dev/fulfillment/items/calculate-packs' \
+    --header 'Content-Type: application/json' \
+    --data '{
     "total_items": 12001
-  }'
+    }'
 
 ## Docker
 
