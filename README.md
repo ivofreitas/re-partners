@@ -44,7 +44,7 @@ Access https://re-partners-nameless-leaf-3542.fly.dev/swagger/index.html to try 
 
   Example usage with `curl`:
   ```bash
-    curl --location 'https://re-partners-damp-resonance-9463.fly.dev/fulfillment/items/calculate-packs' \
+    curl --location 'https://re-partners-nameless-leaf-3542.fly.dev/fulfillment/items/calculate-packs' \
     --header 'Content-Type: application/json' \
     --data '{
     "total_items": 12001
