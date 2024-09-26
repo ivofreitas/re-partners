@@ -1,7 +1,9 @@
 package domain
 
+import "re-partners/internal/config"
+
 // PackSizes defines the available pack sizes in descending order for ease of calculation and to minimize the number of packs.
-var PackSizes = [5]int{5000, 2000, 1000, 500, 250}
+var PackSizes = config.GetEnv().Server.PackSizes
 
 // Order represents the total number of items a customer has ordered.
 type Order struct {

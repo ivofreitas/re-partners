@@ -30,7 +30,7 @@ A simple API to calculate the number of packs needed to fulfill customer orders.
 ## Usage
 
 ### UI
-Access https://re-partners-damp-resonance-9463.fly.dev/swagger/index.html to try out it
+Access https://re-partners-nameless-leaf-3542.fly.dev/swagger/index.html to try out it
 
 ### Terminal
 

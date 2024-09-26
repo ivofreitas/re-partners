@@ -55,3 +55,6 @@ testdata/
 
 # Github Worflow disabled
 .github/
+
+# env file
+.env
