@@ -9,7 +9,7 @@ A simple API to calculate the number of packs needed to fulfill customer orders.
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/fulfillment-api.git
+    git clone https://github.com/ivofreitas/re-partners.git
     ```
 
 2. **Install dependencies**:
