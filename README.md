@@ -29,10 +29,10 @@ A simple API to calculate the number of packs needed to fulfill customer orders.
 
 ## Usage
 
-### Endpoints
-The API exposes the following endpoint:
+### UI
+Access https://re-partners-damp-resonance-9463.fly.dev/swagger/index.html to try out it
 
-#### Fulfillment
+### Terminal
 
 - **POST /fulfillment/items/calculate-packs**  
   Calculate the number of packs needed for the given number of items.
@@ -44,6 +44,8 @@ The API exposes the following endpoint:
     --data '{
     "total_items": 12001
     }'
+  
+
 
 ## Docker
 
