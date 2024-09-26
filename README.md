@@ -17,12 +17,17 @@ A simple API to calculate the number of packs needed to fulfill customer orders.
     go mod tidy
     ```
 
-3. **Run the server**:
+3. **Copy local env files**:
+    ```bash
+    cp internal/config/example.env internal/config/.env
+    ```
+
+4. **Run the server**:
     ```bash
     go run cmd/main.go
     ```
 
-4. **Testing with coverage**:
+5. **Testing with coverage**:
     ```bash
     go test -cover ./...
     ```
@@ -44,16 +49,7 @@ Access https://re-partners-nameless-leaf-3542.fly.dev/swagger/index.html to try 
     --data '{
     "total_items": 12001
     }'
-  
 
-
-## Docker
-
-Running it in a docker container:
-
-1. Docker image: `docker build -t re-partners .`
-
-2. Run: `docker run -p 8080:8080 re-partners`
 
 ## License
 
