@@ -52,3 +52,6 @@ testdata/
 
 # Go tools (like race detector)
 *.prof
+
+# Github Worflow disabled
+.github/
